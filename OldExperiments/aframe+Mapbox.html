@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>aFrame and Mapbox</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="../../../aframe/dist/aframe-mapbox-component.min.js"></script>
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    .marker {
+            background-image: url('../img/mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+<script src = "draw.js"></script>
+<script src="https://unpkg.com/three@0.106.2/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.106.2/examples/js/loaders/GLTFLoader.js"></script>
+<div id="map"></div>
+<a-scene>
+
+  <a-mapbox
+    width="7"
+    height="4"
+    position="0 0 0"
+    rotation="-90 0 0"
+    accesstoken="pk.eyJ1IjoibWF0dHJlIiwiYSI6IjRpa3ItcWcifQ.s0AGgKi0ai23K5OJvkEFnA"
+    style="mapbox://styles/mapbox/outdoors-v10"
+  >
+    <a-sphere id="current-location" color="#00f" position="0 0 0" visible="false" radius="0.05"></a-sphere>
+  </a-mapbox>
+
+  <a-sky color="#ECECEC"></a-sky>
+
+  <a-entity position="0 0.4 1">
+    <a-camera></a-camera>
+  </a-entity>
+</a-scene>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	mapboxgl.accessToken = 'pk.eyJ1IjoianN0NCIsImEiOiJja2RqbzQ1eWwwZ3B0MnBvNng4eXY1eHd0In0.4we3jO0V63dPboF8L_qGbQ';
+
+    // Is the map object with its parameters set, ie the map we see
+    var map = (window.map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        zoom: 20,
+        center: [170.507269, -45.887285],
+        pitch: 60,
+        antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
+    }));
+
+
+     drawmodel('../img/HarbourMolars.gltf');
+    // drawmodel('../tmp/[object Object]');
+
+
+
+    var marker = new mapboxgl.Marker().setLngLat([170.507269, -45.887285]).addTo(map);
+</script>
+
+</body>
+</html>

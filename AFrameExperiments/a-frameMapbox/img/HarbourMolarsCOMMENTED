@@ -1,0 +1,77 @@
+{
+    "asset": {
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [                  // just one node required for the scene
+                0                       // ie we only have one point cloud, not multiple objects
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0                   // only one component that makes up this node 
+        }                               // attributes of the mesh defined at the bottom of file
+    ],
+    "buffers": [
+        {
+            "byteLength": 49162272,     // number of bytes in the below file
+            "uri": "HarbourMolars.bin"  // location and name of the binary data file (rename to a ".bin" file)
+        }
+    ],
+    "bufferViews": [                    // 2 views one for the XYZ the other for RGBF
+        {
+            "buffer": 0,
+            "byteOffset": 0,            // start form the start of the buffer 
+            "byteLength": 49162272,     // total number of bytes in .bin file / buffer
+            "byteStride": 16            // each point has 16 bytes associated with it
+        },
+        {
+            "buffer": 0,                // read from same buffer (ie index 0)
+            "byteOffset": 12,           // start reading 12 bytes in so after the XYZ bytes
+            "byteLength": 49162260,     // the total number of bytes - 12
+            "byteStride": 16            
+        }
+    ],
+    "accessors": [                      // accessor used to read from differnt buffer views to create point cloud "mesh"
+        {
+            "bufferView": 0,            // first buffer view
+            "byteOffset": 0,
+            "componentType": 5126,      // 32-bit signed floats
+            "count": 3072642,           // the total number of bytes/16 (total number of points)
+            "type": "VEC3",             // XYZ - 3 elements for each point
+            "max": [                    
+                3.2469310760498047,     // the max min values, required for a valid gltf file
+                3.373725414276123,      // but havent had problems if I left it out
+                6.436559200286865
+            ],
+            "min": [
+                -7.996825218200684,
+                -6.508627891540527,
+                -5.71151065826416
+            ]
+        },
+        {
+            "bufferView": 1,            // second buffer view
+            "byteOffset": 0,           
+            "componentType": 5121,      // unsigned byte
+            "count": 3072642,           
+            "type": "VEC3",             // RGB (ignore F)
+            "normalized": true          // Is required to be normalised
+        }
+    ],
+    "meshes": [                         // object has the point cloud mode
+        {
+            "primitives": [             // the object to be rendered 
+                {
+                    "attributes": {
+                        "POSITION": 0,  // use accessor one for position (refers to index)
+                        "COLOR_0": 1    // use accessor two for colour 
+                    },
+                    "mode": 0           // POINT CLOUD MODE = 0
+                }
+            ]
+        }
+    ]
+}

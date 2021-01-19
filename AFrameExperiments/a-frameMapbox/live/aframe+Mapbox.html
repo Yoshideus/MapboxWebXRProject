@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>aFrame and Mapbox</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-mapbox-component/dist/aframe-mapbox-component.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+<!-- <script src="aframe-mapbox-component.js"></script> -->
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    .marker {
+            background-image: url('../img/mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+</style>
+</head>
+<script>
+		AFRAME.registerComponent("input-listen", {
+        init: function () {
+            //X-button Pressed
+            this.el.addEventListener("xbuttondown", function (e) {
+                this.emit("teleportstart");
+            });
+
+            //X-button Released
+            this.el.addEventListener("xbuttonup", function (e) {
+                this.emit("teleportend");
+            });
+
+						this.el.addEventListener("ybuttondown", function (e) {
+								//mapEl.setAttribute('mapbox.center', mapEl.components.mapbox.unproject(camera.getAttribute('position').x, camera.getAttribute('position').y).toString())
+								setProperty(mapEl, 'mapbox.center', mapEl.components.mapbox.unproject(camera.getAttribute('position').x, camera.getAttribute('position').y).toString());
+								console.log(mapEl.components.mapbox.unproject(head.getAttribute('position').x, head.getAttribute('position').y).toString());
+								mapEl.components.mapbox.update(this._mapInstance);
+								console.log("Re-Centre");
+								mapEl.triggerRepaint();
+						});
+
+						this.el.addEventListener("bbuttondown", function (e) {
+							if (zoom<20) {
+									zoom = zoom+1;
+									//mapEl.setAttribute('mapbox.zoom', zoom.toString());
+									setProperty(mapEl, 'mapbox.zoom', zoom.toString());
+							    mapEl.update(mapElOld);
+									console.log("Zoom(+):"+zoom);
+									mapEl.triggerRepaint();
+							}
+            });
+
+						this.el.addEventListener("abuttondown", function (e) {
+							if (zoom>0) {
+									zoom = zoom-1;
+									setProperty(mapEl, 'mapbox.zoom', zoom.toString());
+									console.log(mapEl);
+									console.log(document.querySelector('a-mapbox').getAttribute('mapbox').zoom);
+									console.log(mapEl.getAttribute('mapbox').zoom);
+									console.log(mapElOld);
+									mapEl.update(mapElOld);
+									console.log("Zoom(-):"+zoom);
+									mapEl.triggerRepaint();
+							}
+            });
+        }
+    });
+</script>
+<body>
+<script src = "draw.js"></script>
+<a-scene>
+	<a-assets>
+		<a-asset-item id="tooth" src="../img/pawns.glb"></a-asset-item>
+	</a-assets>
+  <a-mapbox
+		width="50"
+    height="50"
+		position="0 0 0"
+    rotation="-90 0 0"
+    accesstoken="pk.eyJ1IjoianN0NCIsImEiOiJja2RqbzQ1eWwwZ3B0MnBvNng4eXY1eHd0In0.4we3jO0V63dPboF8L_qGbQ"
+    style="mapbox://styles/mapbox/satellite-streets-v11"
+		>
+		<a-sphere id="current-location" color="#00f" position="0 0 0" visible="false" radius="0.05"></a-sphere>
+		<a-entity id="mapTooth" position="0 0 0" rotation="90 0 0" scale="0.5 0.5 0.5" gltf-model="#tooth"></a-entity>
+	</a-mapbox>
+
+	<!-- <a-entity id="tooth" visible="true" position="0 0.5 0" gltf-model="#tooth"></a-entity> -->
+  <a-sky id="background" color="#ECECEC"></a-sky>
+
+	<a-entity id="cameraRig">
+            <a-entity id="head" camera wasd-controls look-controls position="0 1.6 0">
+            </a-entity>
+            <a-entity id="ctlL"
+                teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents: teleportend"
+                raycaster="objects: .collidable; far:1.2;" laser-controls="hand: left" input-listen>
+                <a-text value="X: Teleport" position="0 0.05 0" rotation="-90 0 0" scale="0.1 0.1 0.1" align="center"
+                    color="#FFFFFF"></a-text>
+            </a-entity>
+            <a-entity id="ctlR" raycaster="objects: .collidable; far:1.2;" laser-controls="hand: right" input-listen>
+                <a-text value="This is your hand!" position="0 0.05 0" rotation="-90 0 0" scale="0.1 0.1 0.1"
+                    align="center" color="#FFFFFF"></a-text>
+            </a-entity>
+        </a-entity>
+</a-scene>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	mapboxgl.accessToken = 'pk.eyJ1IjoianN0NCIsImEiOiJja2RqbzQ1eWwwZ3B0MnBvNng4eXY1eHd0In0.4we3jO0V63dPboF8L_qGbQ';
+
+	var mapEl = document.querySelector('a-mapbox');
+	console.log(mapEl);
+	var mapElOld = Object.assign({}, mapEl);
+	console.log(mapElOld)
+	var currentLocationEl = document.querySelector('#current-location');
+	var toothEl = document.querySelector('#mapTooth');
+	var Lhand = document.querySelector('#lefthand');
+	var Rhand = document.querySelector('#righthand');
+	var camera = document.querySelector('#cameraRig');
+	var head = document.querySelector('#head');
+	var setProperty = AFRAME.utils.entity.setComponentProperty;
+	var zoom = 18;
+
+	setProperty(mapEl, 'mapbox.center', '170.507239' + ',' + '-45.887375');
+	setProperty(mapEl, 'mapbox.zoom', zoom);
+
+	function addMarker(cone) {
+
+		var marker = document.createElement('a-entity');
+
+		if (cone) {
+			var point = document.createElement('a-cone');
+
+			point.setAttribute('height', 0.5);
+			point.setAttribute('radius-bottom', 0);
+			point.setAttribute('radius-top', 0.05);
+			point.setAttribute('rotation', {x: 90, y: 0, z: 0});
+			point.setAttribute('position', {x: 0, y: 0, z: 0.35});
+			point.setAttribute('color', '#f00');
+
+			marker.appendChild(point);
+		} else {
+			marker.setAttribute('id',"smallModel");
+			marker.setAttribute('position', "0 0 0");
+			marker.setAttribute('rotation', "90 0 0");
+			marker.setAttribute('scale', "0.1 0.1 0.1");
+			marker.setAttribute('gltf-model', "#tooth");
+		}
+
+		mapEl.appendChild(marker);
+
+		return marker;
+
+	}
+
+	var marker = addMarker(1);
+	var model = addMarker(0);
+
+	//var marker = new mapboxgl.Marker().setLngLat([170.507269, -45.887285]).addTo(mapEl);
+
+    // Is the map object with its parameters set, ie the map we see
+
+
+    //drawmodel('../img/HarbourMolars.gltf', [170.507269, -45.887285]);
+    // drawmodel('../tmp/[object Object]');
+
+    //var marker = new mapboxgl.Marker().setLngLat([170.507269, -45.887285]).addTo(mapEl);
+
+		//mapEl.appendChild(marker);
+
+		// Once the map is loaded
+		mapEl.addEventListener('mapbox-loaded', function() {
+
+			var geomData = mapEl.components.geometry.data;
+
+			var options = {
+				enableHighAccuracy: true,
+			};
+
+		  var long = 170.507469;
+	  	var lat = -45.887285;
+			var toothlong = 170.507269;
+			var toothlat = -45.887285;
+
+			// Place the marker in the correct position
+			setProperty(currentLocationEl, 'position', mapEl.components.mapbox.project(long, lat));
+			setProperty(toothEl, 'position', mapEl.components.mapbox.project(toothlong, toothlat));
+			setProperty(marker, 'position', mapEl.components.mapbox.project(long, lat));
+			setProperty(model, 'position', mapEl.components.mapbox.project(170.507369, -45.887335));
+			// setProperty(tooth, 'position', mapEl.components.mapbox.project(long, lat));
+			setProperty(currentLocationEl, 'visible', true);
+
+			//onLocationUpdate(lat, long, geomData.width, geomData.height);
+		});
+</script>
+
+</body>
+</html>

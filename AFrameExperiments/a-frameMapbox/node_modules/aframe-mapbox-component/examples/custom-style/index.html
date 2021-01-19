@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>A-Frame Map - Custom style</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="../../dist/aframe-mapbox-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-entity
+        id="map"
+        geometry="primitive: plane; width: 7; height: 4;"
+        material="color: #ffffff; shader: flat; side: both; transparent: true;"
+        mapbox="center: -119.5591, 37.715; zoom: 8;
+          accesstoken: pk.eyJ1IjoibWF0dHJlIiwiYSI6IjRpa3ItcWcifQ.s0AGgKi0ai23K5OJvkEFnA;
+          style: mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g;
+"
+        width="7"
+        height="4"
+        position="0 2 -2"
+      ></a-entity>
+
+      <!-- A frame around the map! Because... aframe / a-frame / a frame... get it!? -->
+      <a-box position="0 4 -2" width="7.1" height="0.1" depth="0.1" color="#4CC3D9"></a-box>
+      <a-box position="0 0 -2" width="7.1" height="0.1" depth="0.1" color="#4CC3D9"></a-box>
+      <a-box position="3.5 2 -2" width="0.1" height="4.1" depth="0.1" color="#4CC3D9"></a-box>
+      <a-box position="-3.5 2 -2" width="0.1" height="4.1" depth="0.1" color="#4CC3D9"></a-box>
+
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-entity position="0 0 3.8">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+
+    <script>
+      // see https://docs.mapbox.com/mapbox-gl-js/example/hillshade/
+      const mapEl = document.getElementById('map')
+      mapEl.addEventListener('mapbox-loaded', function() {
+        const map = mapEl.components.mapbox.getMap();
+        map.addSource('dem', {
+          'type': 'raster-dem',
+          'url': 'mapbox://mapbox.terrain-rgb'
+          });
+        map.addLayer(
+          {
+            'id': 'hillshading',
+            'source': 'dem',
+            'type': 'hillshade'
+            // insert below waterway-river-canal-shadow;
+            // where hillshading sits in the Mapbox Outdoors style
+          },
+          'waterway-river-canal-shadow'
+          );
+      });
+    </script>
+  </body>
+</html>

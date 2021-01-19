@@ -1,0 +1,13 @@
+/live dir are two html pages with scripts
+    - map.html, draw.js - load mapbox with a point cloud, 
+        loction of model needs to be specified
+    - peer.html, main.js - establish peer connection with Pano3D, 
+        downloads the streamed point cloud
+    - /node_modules - the msgpack library is in here, no other 
+        library download 
+
+/img dir are
+    - HarbourMolar.gltf and HarbourMolar.bin - Point cloud example,
+        loaded by map.html by default
+
+    
