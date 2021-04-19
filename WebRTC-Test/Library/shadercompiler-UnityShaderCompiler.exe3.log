@@ -1,0 +1,91 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=9677 outsize=5242 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9677 outsize=7590 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4693 outsize=2751 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2681 outsize=2268 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13862 outsize=2343 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10824 outsize=4192 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3105 outsize=2047 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=39604 outsize=37115 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=39604 outsize=37933 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3612 outsize=1061 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=21755 outsize=15194 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9567 outsize=8301 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8045 outsize=5777 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=21811 outsize=5427 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6028 outsize=2809 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6596 outsize=3022 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6596 outsize=1243 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9902 outsize=8391 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8929 outsize=4225 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=25900 outsize=15695 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=14952 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=32047 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=41198 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=48710 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=34432 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=70318 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=16218 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=37654 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=43003 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=40387 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=47986 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=53586 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8565 outsize=5561 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3829 outsize=4173 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=27979 outsize=5639 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7401 outsize=6491 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13599 outsize=2134 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10327 outsize=7759 ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1602 outsize=7142 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL SHADOWS_SCREEN LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1590 outsize=402 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6822 outsize=810 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5657 outsize=498 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: initializeCompiler
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process

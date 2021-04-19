@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Mapbox/Examples/4_ReplaceFeatures/ReplaceFeatures.unity
+    guid: 54d1b7ee40bee49559dd74210c7d5a57
+  - enabled: 0
+    path: Assets/Mapbox/Examples/0_PrefabScenes/CitySimulator.unity
+    guid: e9aaa5d7902ec4a07bb4b1f2923cafc8
+  - enabled: 0
+    path: Assets/MapboxAR/Examples/Scenes/WorldScaleAR-ManualAlignment.unity
+    guid: d9ff170f22f0545c3970a889a592f312
+  - enabled: 0
+    path: Assets/MapboxAR/Examples/Scenes/TabletopAR.unity
+    guid: a455922b0e2954431922c9fb6c5377e4
+  - enabled: 0
+    path: Assets/Mapbox/Examples/7_Globe/Globe.unity
+    guid: 614e3e19125ae46c7af990b7e3debd36
+  - enabled: 0
+    path: Assets/Mapbox/Examples/8_VoxelMap/VoxelMap.unity
+    guid: daabe3028a2c14661b829fff509af827
+  - enabled: 0
+    path: Assets/Mapbox/Examples/2_AstronautGame/AstronautGame.unity
+    guid: 23b3522d4f6fa450eb781397db4b26ed
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: dc18e06c0fe1c774f8bb652a0036604b,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2caadedad79799d459d9fdb274ad430d,
+      type: 2}

@@ -1,0 +1,76 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=21107 outsize=27350 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9677 outsize=4981 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9677 outsize=6309 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=17611 outsize=8303 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4693 outsize=662 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4693 outsize=2756 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2681 outsize=2273 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13862 outsize=666 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10824 outsize=4699 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=39604 outsize=41874 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=39604 outsize=41874 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=21755 outsize=15906 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3632 outsize=1426 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9567 outsize=13328 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8045 outsize=695 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=21811 outsize=5115 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6028 outsize=2417 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6596 outsize=4889 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6596 outsize=919 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8929 outsize=4256 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=25900 outsize=14181 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=119411 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=70002 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=37733 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=40379 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=72695 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3607 outsize=3162 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=27979 outsize=426 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2512 outsize=757 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=11912 outsize=1172 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7401 outsize=6586 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10327 outsize=7594 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=11846 outsize=1258 kw=SHADOWS_SPLIT_SPHERES pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=3007 outsize=1050 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=7306 outsize=142 kw=_NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: initializeCompiler
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process

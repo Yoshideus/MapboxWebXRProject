@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.WebRTC.Samples", "Unity.WebRTC.Samples.csproj", "{78C54088-B308-4F96-BAFA-5F577CD74B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{DBA8C97D-329F-02B6-96AA-19841B2F1756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78C54088-B308-4F96-BAFA-5F577CD74B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C54088-B308-4F96-BAFA-5F577CD74B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C54088-B308-4F96-BAFA-5F577CD74B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C54088-B308-4F96-BAFA-5F577CD74B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA8C97D-329F-02B6-96AA-19841B2F1756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA8C97D-329F-02B6-96AA-19841B2F1756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA8C97D-329F-02B6-96AA-19841B2F1756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA8C97D-329F-02B6-96AA-19841B2F1756}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

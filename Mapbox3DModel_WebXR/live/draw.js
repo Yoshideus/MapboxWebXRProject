@@ -112,7 +112,7 @@ function drawmodel(modelname, modelOriginIN){
                 .multiply(rotationY)
                 .multiply(rotationZ);
 
-            //this.camera.updateProjectionMatrix();
+            this.camera.updateProjectionMatrix();
             this.renderer.state.reset();
             this.renderer.render(this.scene, this.camera);
             map.triggerRepaint();
